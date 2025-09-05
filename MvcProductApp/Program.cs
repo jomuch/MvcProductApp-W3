@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MvcWebApp_Wk3v2;
 using MvcProductApp.Services;
+using MvcWebApp_Wk3v2.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
