@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcProductApp.Data;
+using MvcWebApp_Wk3v2;
 
 #nullable disable
 
 namespace MvcProductApp.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(MvcWebApp_Wk3v2.Data.ApplicationDbContext))]
     [Migration("20250824103028_InitialCreate")]
     partial class InitialCreate
     {

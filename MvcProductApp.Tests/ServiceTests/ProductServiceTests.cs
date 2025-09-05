@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MvcProductApp.Data;
+using MvcWebApp_Wk3v2;
 using MvcProductApp.Models;
 using MvcProductApp.Services;
 

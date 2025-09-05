@@ -1,13 +1,13 @@
-﻿using MvcProductApp.Data;
-using MvcProductApp.Models;
+﻿using MvcWebApp_Wk3v2;
+using MvcWebApp_Wk3v2.Features.Product;
 
 namespace MvcProductApp.Services
 {
     public class ProductService : IProductService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly MvcWebApp_Wk3v2.Data.ApplicationDbContext _context;
 
-        public ProductService(ApplicationDbContext context)
+        public ProductService(MvcWebApp_Wk3v2.Data.ApplicationDbContext context)
         {
             _context = context;
         }

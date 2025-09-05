@@ -1,4 +1,4 @@
-﻿using MvcProductApp.Models;
+﻿using MvcWebApp_Wk3v2.Features.Product;
 
 namespace MvcProductApp.Services
 {

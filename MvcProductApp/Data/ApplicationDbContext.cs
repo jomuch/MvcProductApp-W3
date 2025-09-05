@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MvcProductApp.Models;
+using MvcWebApp_Wk3v2.Features.Product; // This 'using' statement is required
 
-namespace MvcProductApp.Data
+namespace MvcWebApp_Wk3v2.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -9,14 +9,13 @@ namespace MvcProductApp.Data
             : base(options)
         {
         }
-
         public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Product>().Property(p => p.Price).HasColumnType("decimal(18, 2)");
 
-            // Add this block to seed the database
             modelBuilder.Entity<Product>().HasData(
                 new Product { Id = 1, Name = "Laptop", Price = 1299.99m },
                 new Product { Id = 2, Name = "Wireless Mouse", Price = 79.99m },
@@ -26,3 +25,4 @@ namespace MvcProductApp.Data
         }
     }
 }
+
