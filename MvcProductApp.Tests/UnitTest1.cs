@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MvcProductApp.Services;
-using MvcWebApp_Wk3v2.Data;
-using MvcWebApp_Wk3v2.Features.Product;
+using MvcProductApp.Data;
+using MvcProductApp.Features.Product;
 using Xunit;
 
 namespace MvcWebApp_Wk3v2.Tests.ServiceTests

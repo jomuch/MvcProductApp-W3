@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MvcWebApp_Wk3v2.Features.Product; // This 'using' statement is required
+using MvcProductApp.Features.Product;
 
-namespace MvcWebApp_Wk3v2.Data
+namespace MvcProductApp.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -25,4 +25,3 @@ namespace MvcWebApp_Wk3v2.Data
         }
     }
 }
-

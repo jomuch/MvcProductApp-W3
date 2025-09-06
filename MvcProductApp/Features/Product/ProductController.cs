@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MvcWebApp_Wk3v2.Data;
-using MvcWebApp_Wk3v2.Features.Product;
+using MvcProductApp.Data;
+using MvcProductApp.Features.Product;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -49,7 +49,7 @@ namespace MvcWebApp_Wk3v2.Features.Product
         // POST: /products/create
         [HttpPost("create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price")] MvcProductApp.Features.Product product)
         {
             if (ModelState.IsValid)
             {

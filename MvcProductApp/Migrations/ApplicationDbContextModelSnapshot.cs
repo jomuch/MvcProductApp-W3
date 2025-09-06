@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcWebApp_Wk3v2;
-using MvcWebApp_Wk3v2.Data;
+using MvcProductApp;
+using MvcProductApp.Data;
 
 #nullable disable
 
