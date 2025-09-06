@@ -1,7 +1,6 @@
-﻿@using MvcProductApp.Features.Product
-@model Product
+﻿@model Product
 
-P
+@{
     ViewData["Title"] = "Create";
 }
 
@@ -28,3 +27,9 @@ P
         </form>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
