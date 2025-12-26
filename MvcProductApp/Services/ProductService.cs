@@ -1,20 +1,18 @@
 ﻿using MvcProductApp.Data;
-using MvcProductApp.Models;
+using MvcProductApp.Features.Product;
+using System.Linq;
 
 namespace MvcProductApp.Services
 {
     public class ProductService : IProductService
     {
         private readonly ApplicationDbContext _context;
-
         public ProductService(ApplicationDbContext context)
         {
             _context = context;
         }
-
         public Product? GetFeaturedProduct()
         {
-            // Business logic: The "featured" product is the most expensive one.
             return _context.Products
                 .OrderByDescending(p => p.Price)
                 .FirstOrDefault();

@@ -10,7 +10,7 @@ using MvcProductApp.Data;
 
 namespace MvcProductApp.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(MvcProductApp.Data.ApplicationDbContext))]
     [Migration("20250824103028_InitialCreate")]
     partial class InitialCreate
     {

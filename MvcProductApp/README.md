@@ -31,6 +31,40 @@ This project uses a service layer to separate business logic from the controller
 Dependency Injection is used to provide the ProductService to the HomeController:
 Constructor Injection: The HomeController receives an IProductService through its constructor. This makes the dependency explicit and ensures the controller cannot be created without its required service.
 Programming to an Interface: The controller depends on the IProductService interface, not the concrete ProductService class. This decouples the controller from the implementation, allowing the service to be easily replaced or mocked for unit testing.
+
+# MvcProductApp - Week 3
+
+This is an ASP.NET Core MVC application that demonstrates a full CRUD product catalog. This version has been refactored to use a "Feature Folders" architecture and "Attribute Routing".
+
+## How to Run
+
+1.  **Prerequisites**:
+    * .NET SDK (8.0 or newer)
+    * Visual Studio 2022
+2.  **Clone & Open**: Clone the repository and open the `MvcProductApp.sln` file.
+3.  **Create Database**: In the Package Manager Console, run the command `Update-Database`.
+4.  **Run**: Press F5 to launch the application.
+
+## Design Notes
+
+This project uses a service layer (`ProductService`) to separate business logic from the `HomeController`. The controller depends on the `IProductService` interface, which is provided via constructor injection. This decouples the controller from the implementation, making it highly testable. The service is registered with a **Scoped** lifetime.
+
+## Route Map
+
+This application uses attribute routing to define its URL patterns.
+
+| Verb | URL Pattern          | Controller | Action  | Description                  |
+|------|----------------------|------------|---------|------------------------------|
+| GET  | `/`                  | `Home`     | `Index` | Displays the homepage.       |
+| GET  | `/Home/Privacy`      | `Home`     | `Privacy` | Displays the privacy policy. |
+| GET  | `/products`          | `Product`  | `Index` | Lists all products.          |
+| GET  | `/products/details/5`| `Product`  | `Details` | Shows details for a product. |
+| GET  | `/products/create`   | `Product`  | `Create`| Displays the new product form. |
+| POST | `/products/create`   | `Product`  | `Create`| Saves a new product.         |
+| GET  | `/products/edit/5`   | `Product`  | `Edit`  | Displays the edit form for 5.|
+| POST | `/products/edit/5`   | `Product`  | `Edit`  | Saves changes to product 5.  |
+| GET  | `/products/delete/5` | `Product`  | `Delete`| Shows the delete confirmation|
+| POST | `/products/delete/5` | `Product`  | `Delete`| Deletes product 5.           |
 DI Lifetime: The service is registered with a Scoped lifetime in Program.cs. This is the appropriate choice because the ProductService depends on ApplicationDbContext, which is also scoped, ensuring they share the same database context for a single request.
 Screenshot
 

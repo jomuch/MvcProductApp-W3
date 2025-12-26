@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MvcProductApp.Models;
+using MvcProductApp.Features.Product; // Updated using
 
 namespace MvcProductApp.Data
 {
@@ -9,19 +9,18 @@ namespace MvcProductApp.Data
             : base(options)
         {
         }
-
         public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Product>().Property(p => p.Price).HasColumnType("decimal(18, 2)");
 
-            // Add this block to seed the database
+            // Your seed data...
             modelBuilder.Entity<Product>().HasData(
                 new Product { Id = 1, Name = "Laptop", Price = 1299.99m },
-                new Product { Id = 2, Name = "Wireless Mouse", Price = 79.99m },
-                new Product { Id = 3, Name = "Mechanical Keyboard", Price = 149.50m },
-                new Product { Id = 4, Name = "4K Monitor", Price = 650.00m }
+                new Product { Id = 2, Name = "Wireless Mouse", Price = 79.99m }
+                // Add other seed data here
             );
         }
     }

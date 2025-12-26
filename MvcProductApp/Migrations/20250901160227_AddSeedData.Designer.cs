@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcProductApp.Data;
+using MvcProductApp.Features.Product;
 
 #nullable disable
 
 namespace MvcProductApp.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(MvcProductApp.Data.ApplicationDbContext))]
     [Migration("20250901160227_AddSeedData")]
     partial class AddSeedData
     {

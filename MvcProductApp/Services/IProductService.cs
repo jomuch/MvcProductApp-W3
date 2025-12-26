@@ -1,4 +1,4 @@
-﻿using MvcProductApp.Models;
+﻿using MvcProductApp.Features.Product;
 
 namespace MvcProductApp.Services
 {

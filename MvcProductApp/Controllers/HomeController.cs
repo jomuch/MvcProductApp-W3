@@ -1,23 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using MvcProductApp.Models;
-using MvcProductApp.Services; // Add this using statement
+using MvcProductApp.Services;
 using System.Diagnostics;
 
 namespace MvcProductApp.Controllers
 {
+    [Route("[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IProductService _productService; // Add this field
+        private readonly IProductService _productService;
 
-        // Update the constructor to accept IProductService
         public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
             _productService = productService;
         }
 
-        // Update the Index action to use the service
+        [Route("")]
         public IActionResult Index()
         {
             var featuredProduct = _productService.GetFeaturedProduct();
@@ -25,15 +25,18 @@ namespace MvcProductApp.Controllers
             return View();
         }
 
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("Error")]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
+
